@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+    <header>
+        <h1>Registro Estudiante Nuevo</h1>
+    </header>
+    <main>
+        <div>
+            <form action="" method="get">
+
+                <fieldset>
+                    <legend>Datos Personales</legend>
+                    <label for="nombre">Nombres</label>
+                    <input type="text" name="nombre" id="nombre">
+                    <label for="apPat">Apellido Paterno</label>
+                    <input type="text" name="apPat" id="apPat">
+                    <label for="apMat">Apellido Materno</label>
+                    <input type="text" name="apMat" id="apMat">
+                    <label for="fechaNac">Fecha Nacimiento</label>
+                    <input type="date" name="fechaNac" id="fechaNac">
+                    <label for="carnet">Carnet</label>
+                    <input type="number" name="carnet" id="carnet">
+                    <label for="sexo">Sexo</label>
+                    <input type="radio" name="sexo" id="sexo" value="hombre">Hombre
+                    <input type="radio" name="sexo" id="sexo2" value="mujer">Mujer
+                </fieldset>
+
+                <fieldset>
+                    <legend>Datos Carrera</legend>
+                    <label for="carrera">Carrera</label>
+                    <select name="carrera" id="carrera">
+                        <option value="1">Sistemas</option>
+                        <option value="2">Contaduria</option>
+                        <option value="3">Mercadotecnia</option>
+                        <option value="4">Secretariado</option>
+                    </select>
+                    <label for="gestion">Gestion</label>
+                    <input type="text" name="gestion" id="gestion">
+                    <label for="">Materias</label>
+                    <input type="checkbox" name="mat1" id="mat1" value="PRG-I">Programacion I
+                    <input type="checkbox" name="mat2" id="mat2" value="PRGW-I">Programacion web I
+                    <input type="checkbox" name="mat3" id="mat3" value="HDR">Hardware
+                    <input type="checkbox" name="mat4" id="mat4" value="ING">Ingles
+                    <input type="checkbox" name="mat5" id="mat5" value="TSO">Talles sist. ope.
+
+
+                </fieldset>
+                <input type="submit" value="Registrar">
+            </form>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>

@@ -1,0 +1,16 @@
+.contenedor{
+    display: flex;
+    /*height: 400px;*/
+    flex-direction: row;
+    flex-wrap: wrap;
+    /*justify-content: center;
+    align-items: center;*/
+    
+
+}
+.caja{
+    flex-grow: 1;
+    background-color: cornflowerblue;
+    margin: 5px;
+    padding: 10px;
+}

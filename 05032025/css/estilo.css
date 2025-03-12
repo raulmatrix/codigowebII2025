@@ -1,0 +1,56 @@
+*{
+    font-family: Verdana;
+    background-color: rgb(151, 195, 196);
+    
+}
+
+h1,h2{
+    text-align: center;
+    color: gray;
+    font-size: 15px;
+}
+
+#parrafo1{
+    background-color: crimson;
+    color: white;
+    padding: 5px;
+}
+.parrafo::first-letter{
+    
+    color: white;
+    font-size: 30px;
+}
+
+/*selector descendente*/
+div p{
+    background-color: blueviolet;
+}
+
+div.prueba{
+    background-color: darkgreen;
+}
+
+div.prueba:hover{
+    display: none;
+}
+
+div a{
+    background-color: blueviolet;
+    color: red;
+    text-decoration: none;
+}
+
+button{
+    background-color: cornflowerblue;
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 5px;
+}
+
+button:hover{
+    background-color: blue;
+}
+
+footer p::after{
+    content: "-INCOS 2025";
+}

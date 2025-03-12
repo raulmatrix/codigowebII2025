@@ -1,0 +1,20 @@
+input[type="text"],input[type="password"]{
+    display: block;
+}
+
+h1{
+    text-align: center;
+}
+
+.loguin{
+    height: 300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.caja{
+    
+}
