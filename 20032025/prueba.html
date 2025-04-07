@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD con Fetch API</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin: 20px; }
+        button { margin: 10px; padding: 10px; cursor: pointer; }
+        pre { background: #f4f4f4; padding: 10px; border-radius: 5px; text-align: left; }
+    </style>
+</head>
+<body>
+
+    <h2>Ejemplo de GET, POST, PUT y DELETE con Fetch API</h2>
+
+    <button onclick="getData()">GET (Obtener Datos)</button>
+    <button onclick="createData()">POST (Crear Datos)</button>
+    <button onclick="updateData()">PUT (Actualizar Datos)</button>
+    <button onclick="deleteData()">DELETE (Eliminar Datos)</button>
+
+    <h3>📌 Respuesta del Servidor:</h3>
+    <pre id="output">Haz clic en un botón para ver la respuesta...</pre>
+
+    <script>
+        const output = document.getElementById("output");
+
+        // 🟢 GET - Obtener un post específico
+        function getData() {
+            fetch('https://jsonplaceholder.typicode.com/posts/1')
+                .then(response => response.json())
+                .then(data => output.innerText = JSON.stringify(data, null, 2))
+                .catch(error => output.innerText = "Error en GET: " + error);
+        }
+
+        // 🔵 POST - Crear un nuevo post
+        function createData() {
+            fetch('https://jsonplaceholder.typicode.com/posts', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    title: 'Nuevo Post',
+                    body: 'Contenido del post',
+                    userId: 1
+                })
+            })
+            .then(response => response.json())
+            .then(data => output.innerText = JSON.stringify(data, null, 2))
+            .catch(error => output.innerText = "Error en POST: " + error);
+        }
+
+        // 🟠 PUT - Actualizar un post existente
+        function updateData() {
+            fetch('https://jsonplaceholder.typicode.com/posts/1', {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    id: 1,
+                    title: 'Título Actualizado',
+                    body: 'Nuevo contenido',
+                    userId: 1
+                })
+            })
+            .then(response => response.json())
+            .then(data => output.innerText = JSON.stringify(data, null, 2))
+            .catch(error => output.innerText = "Error en PUT: " + error);
+        }
+
+        // 🔴 DELETE - Eliminar un post
+        function deleteData() {
+            fetch('https://jsonplaceholder.typicode.com/posts/1', {
+                method: 'DELETE'
+            })
+            .then(() => output.innerText = "Recurso eliminado exitosamente")
+            .catch(error => output.innerText = "Error en DELETE: " + error);
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD con DummyJSON</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin: 20px; }
+        button, input { margin: 10px; padding: 10px; cursor: pointer; }
+        pre { background: #f4f4f4; padding: 10px; border-radius: 5px; text-align: left; }
+    </style>
+</head>
+<body>
+
+    <h2>📦 CRUD con DummyJSON</h2>
+
+    <h3>🔍 Obtener Producto</h3>
+    <input type="number" id="getId" placeholder="ID del producto">
+    <button onclick="getProduct()">GET</button>
+
+    <h3>➕ Crear Producto</h3>
+    <input type="text" id="newTitle" placeholder="Nombre del producto">
+    <button onclick="createProduct()">POST</button>
+
+    <h3>✏️ Actualizar Producto</h3>
+    <input type="number" id="updateId" placeholder="ID del producto">
+    <input type="text" id="updateTitle" placeholder="Nuevo nombre">
+    <button onclick="updateProduct()">PUT</button>
+
+    <h3>🗑️ Eliminar Producto</h3>
+    <input type="number" id="deleteId" placeholder="ID del producto">
+    <button onclick="deleteProduct()">DELETE</button>
+
+    <h3>📌 Respuesta del Servidor:</h3>
+    <pre id="output">Esperando acción...</pre>
+
+    <script>
+        const output = document.getElementById("output");
+
+        // 🟢 GET - Obtener un producto
+        function getProduct() {
+            let id = document.getElementById("getId").value;
+            if (!id) return alert("⚠️ Ingresa un ID");
+
+            fetch(`https://dummyjson.com/products/${id}`)
+                .then(response => response.json())
+                .then(data => output.innerText = JSON.stringify(data, null, 2))
+                .catch(error => output.innerText = "❌ Error en GET: " + error);
+        }
+
+        // 🔵 POST - Crear un nuevo producto
+        function createProduct() {
+            let title = document.getElementById("newTitle").value;
+            if (!title) return alert("⚠️ Ingresa un nombre para el producto");
+
+            fetch('https://dummyjson.com/products/add', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ title: title })
+            })
+            .then(response => response.json())
+            .then(data => output.innerText = JSON.stringify(data, null, 2))
+            .catch(error => output.innerText = "❌ Error en POST: " + error);
+        }
+
+        // 🟠 PUT - Actualizar un producto
+        function updateProduct() {
+            let id = document.getElementById("updateId").value;
+            let title = document.getElementById("updateTitle").value;
+            if (!id || !title) return alert("⚠️ Ingresa ID y nuevo nombre");
+
+            fetch(`https://dummyjson.com/products/${id}`, {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ title: title })
+            })
+            .then(response => response.json())
+            .then(data => output.innerText = JSON.stringify(data, null, 2))
+            .catch(error => output.innerText = "❌ Error en PUT: " + error);
+        }
+
+        // 🔴 DELETE - Eliminar un producto
+        function deleteProduct() {
+            let id = document.getElementById("deleteId").value;
+            if (!id) return alert("⚠️ Ingresa un ID");
+
+            fetch(`https://dummyjson.com/products/${id}`, {
+                method: 'DELETE'
+            })
+            .then(response => response.json())
+            .then(data => output.innerText = JSON.stringify(data, null, 2))
+            .catch(error => output.innerText = "❌ Error en DELETE: " + error);
+        }
+    </script>
+
+</body>
+</html>
