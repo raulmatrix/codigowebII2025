@@ -16,25 +16,31 @@
             <label for="placa">Placa</label>
             <input type="text" name="placa" id="placa">
             <label for="">Marca</label>
-            <input type="text" name="marca" id="marca">
+            <select name="marca" id="marca">
+                <option value="1">Toyota</option>
+                <option value="2">Suzuki</option>
+                <option value="3">Nissan</option>
+                <option value="4">Chevrolet</option>
+            </select>
             <label for="">Año</label>
-            <input type="number" name="placa" id="placa">
+            <input type="number" name="anio" id="anio">
             <label for="">Precio</label>
             <input type="text" name="precio" id="precio">
+            <label for="estado">Estado</label>
+            <input type="radio" name="estado" id="nuevo" value="nuevo">Nuevo
+            <input type="radio" name="estado" id="usado" value="usado">Usado
 
         </form>
 
-        <button id="btnRegistro">Registrar</button>
+        <button onclick="registrar()">Registrar</button>
 
-        <div id="mostrarDatos">
-
-        </div>
+        
     </main>
     <footer>
 
     </footer>
-    <script src="js/jquery-3.7.1.min.js"></script>
-    <script src="js/registro.js">
+    
+    <script src="js/registro2.js">
        
     </script>
 </body>
