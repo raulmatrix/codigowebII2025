@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <form method="get">
+        <label for="">Nombre</label>
+        <input type="text" name="nombre" id="nombre">
+        <label for="">Liga</label>
+        <input type="text" name="liga" id="liga">
+        <label for="">Nivel de Poder</label>
+        <input type="number" name="nivel" id="nivel">
+        <label for="">Poderes</label>
+        <input type="text" name="poderes" id="poderes">
+    </form>
+    <button onclick="insertar()">Insertar heroe</button>
+    <h1>Lista de heroes</h1>
+    <div id="contenedorHeroes">
+
+    </div>
+
+    <script src="js/Heroe.js"></script>
+    <script src="js/cargaHeroes.js"></script>
+</body>
+</html>

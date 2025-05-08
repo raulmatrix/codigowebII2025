@@ -1,0 +1,24 @@
+{
+    "Heroe":
+    [
+        {
+            "nombre":"Hulk",
+            "liga":"Marvel",
+            "nivelPoder":9,
+            "poderes":["Super Fuerza","Radiacion"]   
+        },
+        {
+            "nombre":"IronMan",
+            "liga":"Marvel",
+            "nivelPoder":7,
+            "poderes":["Volador","Rayo","Dinero"]
+        },
+        {
+            "nombre":"SpiderMan",
+            "liga":"Marvel",
+            "nivelPoder":5,
+            "poderes":["Trepar Muros","Telaraña"]
+        }    
+    ]
+
+}

@@ -1,0 +1,20 @@
+{
+  "Estudiante":  
+[{
+    "nombre":"Jose",
+    "apellidos":"Lopez Rojas",
+    "carrera":"Sistemas",
+    "codEstudiante":100
+},
+{
+    "nombre":"Ana",
+    "apellidos":"Montalvo Caceres",
+    "carrera":"Industrial",
+    "codEstudiante":101
+},
+{
+    "nombre":"Emma",
+    "apellidos":"Peredo",
+    "carrera":"Auditoria",
+    "codEstudiante":102
+}]}
