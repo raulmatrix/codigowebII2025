@@ -1,0 +1,29 @@
+.titulo{
+    background-color: rgb(68, 217, 68);
+    border: 1px solid white;
+}
+
+.menurojo{
+    background-color: red;
+    border: 1px solid white;
+}
+
+.naranja{
+    background-color: orange;
+    border: 1px solid white;
+}
+
+.morado{
+    background-color: purple;
+    border: 1px solid white;
+}
+.azul{
+    background-color: blue;
+    border: 1px solid white;
+    color: white;
+}
+
+.pie{
+    background-color: rgb(68, 217, 68);
+    border: 1px solid white;
+}
